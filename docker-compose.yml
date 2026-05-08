@@ -1,0 +1,13 @@
+services:
+  controlroom-api:
+    build: .
+    container_name: controlroom-api
+    ports:
+      - "8000:8000"
+    environment:
+      CONTROLROOM_DB_PATH: /app/data/controlroom.sqlite3
+    volumes:
+      - controlroom_data:/app/data
+
+volumes:
+  controlroom_data:
